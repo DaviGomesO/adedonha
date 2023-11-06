@@ -1,5 +1,3 @@
-
-# Online Python - IDE, Editor, Compiler, Interpreter
 from time import sleep
 import random
 
