@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block head %}
+  <title>Letra sorteada</title>
+{% endblock %}
+
+{% block body %}
+  <h1>STOP - Sorteador de letra</h1>
+  <div class="main">
+    <p><strong>SORTEADA:</strong></p>
+    <p>{{ letra }}</p>
+
+    <a href="/historico" class="button-action">Ver letras sorteadas</a>
+    <a class="return-menu" href="/menu">Voltar ao menu</a>
+  </div>
+  
+{% endblock %}

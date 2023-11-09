@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block head %}
+  <title>Historico: Stop - Sorteador de letra</title>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+  <div class="main">
+    <h1>STOP - Sorteador de letra</h1>
+
+    {% if alfabeto %}
+      <p>Letras ainda não sorteadas: {{ alfabeto }}</p>
+    {% else %}
+      <p>Todas as letras já foram sorteadas.</p>
+    {% endif %}
+
+    <div style="display:flex;">
+      {% if letras_sorteadas %}
+        {% for letra in letras_sorteadas %}
+          <p style="margin-right: 5px;">{{ letra }}</p>
+        {% endfor %}
+      {% else %}
+        <p>Nenhuma letra sorteada ainda</p>
+      {% endif %}
+    </div>
+
+    <a href="/letra_sorteada" id="link-sortear" class="button-action">Sortear letra</a>
+    <a class="return-menu" href="/menu">Voltar ao menu</a>
+
+    <section id="temporizador" class="temporizador-modal" style="display: none; position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    justify-content: center;
+    align-items: center;">
+      <div class="temporizador-conteudo" style="background-color: #fff;
+      padding: 50px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;">
+        <p id="timer"></p>
+  </section>
+
+  </div>
+{% endblock %}
