@@ -3,30 +3,41 @@
 {% block head %}
   <title>Historico: Stop - Sorteador de letra</title>
   <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 {% endblock %}
 
 {% block body %}
   <div class="main">
-    <h1>STOP - Sorteador de letra</h1>
+    <img src="../static/images/Logo_STOP.png" alt="logo sorteador adedonha" class="logo">
 
-    {% if alfabeto %}
-      <p>Letras ainda não sorteadas: {{ alfabeto }}</p>
-    {% else %}
-      <p>Todas as letras já foram sorteadas.</p>
-    {% endif %}
-
-    <div style="display:flex;">
-      {% if letras_sorteadas %}
-        {% for letra in letras_sorteadas %}
-          <p style="margin-right: 5px;">{{ letra }}</p>
-        {% endfor %}
+    <div class="historico_letras">
+      {% if alfabeto %}
+        <p><strong>Letras ainda não sorteadas:</strong><br>
+          <div class="letras">
+            {% for letra in alfabeto %}<p>{{ letra }}</p>{% endfor %}
+          </div>
+        </p>
       {% else %}
-        <p>Nenhuma letra sorteada ainda</p>
+        <p><strong>Todas as letras já foram sorteadas.</strong></p>
       {% endif %}
     </div>
 
-    <a href="/letra_sorteada" id="link-sortear" class="button-action">Sortear letra</a>
-    <a class="return-menu" href="/menu">Voltar ao menu</a>
+    <div class="letras_sorteadas">
+      {% if letras_sorteadas %}
+        <p><strong>Letras sorteadas:</strong><br>
+          <div class="letras">
+            {% for letra in letras_sorteadas %}
+              <p>{{ letra }}</p>
+            {% endfor %}
+          </div>
+        </p>
+      {% else %}
+        <p><strong>Nenhuma letra sorteada ainda</strong></p>
+      {% endif %}
+    </div>
+
+    <a href="/letra_sorteada" id="link-sortear" class="button-action sortear">Sortear letra</a>
+    <a class="button-action menu" href="/menu">Voltar ao menu</a>
 
     <section id="temporizador" class="temporizador-modal" style="display: none; position: fixed;
     top: 0;

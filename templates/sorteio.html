@@ -2,16 +2,18 @@
 
 {% block head %}
   <title>Letra sorteada</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 {% endblock %}
 
 {% block body %}
-  <h1>STOP - Sorteador de letra</h1>
   <div class="main">
-    <p><strong>SORTEADA:</strong></p>
-    <p>{{ letra }}</p>
+    <img src="../static/images/Logo_STOP.png" alt="logo sorteador adedonha" class="logo">
 
-    <a href="/historico" class="button-action">Ver letras sorteadas</a>
-    <a class="return-menu" href="/menu">Voltar ao menu</a>
+    <p class="subtitle"><strong>LETRA SORTEADA:</strong></p>
+    <p class="letra_sorteada">{{ letra }}</p>
+
+    <a href="/historico" class="button-action historico">Ver letras sorteadas</a>
+    <a class="button-action menu" href="/menu">Voltar ao menu</a>
   </div>
   
 {% endblock %}

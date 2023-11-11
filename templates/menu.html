@@ -3,14 +3,15 @@
 {% block head %}
   <title>Menu: Stop - Sorteador de letra</title>
   <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 {% endblock %}
 
 {% block body %}
   <div class="main">
-    <h1>STOP - Sorteador de letra</h1>
+    <img src="../static/images/Logo_STOP.png" alt="logo sorteador adedonha" class="logo">
 
-    <a href="/letra_sorteada" id="link-sortear" class="button-action">Sortear letra</a>
-    <a href="/historico" class="button-action">Ver letras sorteadas</a>
+    <a href="/letra_sorteada" id="link-sortear" class="button-action sortear" id="sortear">Sortear letra</a>
+    <a href="/historico" class="button-action historico">Ver letras sorteadas</a>
     <a href="/finalizar" class="button-action close">Encerrar partida</a>
   </div>
   <section id="temporizador" class="temporizador-modal" style="display: none; position: fixed;

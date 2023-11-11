@@ -2,11 +2,13 @@
 
 {% block head %}
   <title>Stop - Sorteador de letra</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 {% endblock %}
 
 {% block body %}
   <div class="main">
-    <h1>STOP - Sorteador de letra</h1>
-    <a class="button-action" href="/menu">Iniciar</a>
+    <img src="../static/images/Logo_STOP.png" alt="logo sorteador adedonha" class="logo">
+
+    <a class="button-action inicial" href="/menu">Iniciar</a>
   </div>
 {% endblock %}

@@ -7,15 +7,14 @@ configure_session(app)
 
 @app.route('/')
 def inicial():
-    if 'alfabeto' not in session:
-      session['alfabeto'] = ALFABETO
-      return render_template('inicial.html')
-    else:
-       return redirect('/menu')
+    if 'alfabeto' in session:
+      return redirect('/menu')
+    return render_template('inicial.html')
 
 @app.route('/menu')
 def menu():
    if 'letras_sorteadas' not in session:
+      session['alfabeto'] = ALFABETO
       session['letras_sorteadas'] = []
    return render_template('menu.html')
 
