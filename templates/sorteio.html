@@ -2,6 +2,7 @@
 
 {% block head %}
   <title>Letra sorteada</title>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 {% endblock %}
 
@@ -12,8 +13,14 @@
     <p class="subtitle"><strong>LETRA SORTEADA:</strong></p>
     <p class="letra_sorteada">{{ letra }}</p>
 
+    <a href="/letra_sorteada" id="link-sortear" class="button-action sortear" id="sortear">Sortear mais uma letra</a>
     <a href="/historico" class="button-action historico">Ver letras sorteadas</a>
     <a class="button-action menu" href="/menu">Voltar ao menu</a>
   </div>
+
+  <section id="temporizador" class="temporizador-modal">
+      <div class="temporizador-conteudo">
+        <p id="timer"></p>
+    </section>
   
 {% endblock %}
